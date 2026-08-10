@@ -1,10 +1,11 @@
 import axios from "axios";
+import { API_BASE_URL } from "../../utils/apiConfig.js";
 
 const getToken = () => localStorage.getItem("token");
 
 const client = () =>
     axios.create({
-        baseURL: "/api",
+        baseURL: API_BASE_URL,
         headers: {
             "Content-Type": "application/json",
             ...(getToken() ? { Authorization: `Bearer ${getToken()}` } : {}),

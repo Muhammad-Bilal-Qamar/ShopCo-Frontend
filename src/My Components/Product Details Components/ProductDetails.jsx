@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import PromoBanner from "../HomePage Components/Promobar.jsx";
 import Navbar from "../HomePage Components/Navbar.jsx";
 import Footer from "../HomePage Components/Footer.jsx";
+import { API_BASE_URL } from "../../utils/apiConfig.js";
 import { addToCart, changeQuantity, getCartQuantity } from "./cartStore.js";
 import { getProductImageUrl } from "../../utils/media.js";
 
@@ -96,7 +97,7 @@ const ProductDetail = () => {
       .then(() => {
         setLoading(true);
         setError(null);
-        return fetch(`/api/products/${id}`);
+        return fetch(`${API_BASE_URL}/products/${id}`);
       })
       .then(async (response) => {
         const text = await response.text();
@@ -139,7 +140,7 @@ const ProductDetail = () => {
   }, [id]);
 
   useEffect(() => {
-    fetch("/api/products")
+    fetch(`${API_BASE_URL}/products`)
       .then((response) => response.json())
       .then((data) => {
         setRelatedProducts(

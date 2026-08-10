@@ -72,6 +72,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../Authentication/useAuth.js";
 import { getUserAvatarSource, getUserInitials } from "../../utils/auth.js";
+import CartIcon from "../../assets/Cart.svg";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -209,7 +210,7 @@ const Navbar = () => {
           )}
 
           <Link to="/cart" className="p-1 hover:opacity-70 transition-opacity">
-            <img src="/src/assets/Cart.svg" alt="Cart" className="w-6 h-6" />
+            <img src={CartIcon} alt="Cart" className="w-6 h-6" />
           </Link>
 
           <div className="relative">

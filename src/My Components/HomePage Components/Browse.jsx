@@ -51,6 +51,10 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import CasualImage from "../../assets/Casual.svg";
+import FormalImage from "../../assets/Formal.svg";
+import PartyImage from "../../assets/Party.svg";
+import GymImage from "../../assets/Gym.svg";
 
 const BrowseBy = () => {
   return (
@@ -67,7 +71,7 @@ const BrowseBy = () => {
               className="relative w-full h-[190px] md:w-[40%] md:h-[288px] rounded-2xl overflow-hidden bg-white transition hover:opacity-90"
             >
               <img
-                src="src\assets\Casual.svg"
+                src={CasualImage}
                 className="w-full h-full object-cover"
                 alt="Casual"
               />
@@ -78,7 +82,7 @@ const BrowseBy = () => {
               className="relative w-full h-[190px] md:w-[60%] md:h-[288px] rounded-2xl overflow-hidden bg-white transition hover:opacity-90"
             >
               <img
-                src="src\assets\Formal.svg"
+                src={FormalImage}
                 className="w-full h-full object-cover"
                 alt="Formal"
               />
@@ -91,7 +95,7 @@ const BrowseBy = () => {
               className="relative w-full h-[190px] md:w-[60%] md:h-[288px] rounded-2xl overflow-hidden bg-white transition hover:opacity-90"
             >
               <img
-                src="src\assets\Party.svg"
+                src={PartyImage}
                 className="w-full h-full object-cover"
                 alt="Party"
               />
@@ -102,7 +106,7 @@ const BrowseBy = () => {
               className="relative w-full h-[190px] md:w-[40%] md:h-[288px] rounded-2xl overflow-hidden bg-white transition hover:opacity-90"
             >
               <img
-                src="src\assets\Gym.svg"
+                src={GymImage}
                 className="w-full h-full object-cover"
                 alt="Gym"
               />

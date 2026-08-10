@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_BASE_URL } from "../../utils/apiConfig.js";
 
 const CART_CHANGE_EVENT = "cartchange";
 
@@ -10,7 +11,7 @@ let cartCache = [];
 const getAuth = () => {
     const storedUser = JSON.parse(localStorage.getItem("ecomm_user") || "null");
     const token = localStorage.getItem("token");
-    
+
     // Safely find the userId regardless of the object structure
     const userId =
         storedUser?.id ??
@@ -20,7 +21,7 @@ const getAuth = () => {
         storedUser?.user?.userId ??
         storedUser?.user?.UserId ??
         null;
-        
+
     return { userId, token };
 };
 
@@ -28,7 +29,7 @@ const getAuth = () => {
 const apiClient = () => {
     const { token } = getAuth();
     return axios.create({
-        baseURL: "/api",
+        baseURL: API_BASE_URL,
         headers: {
             "Content-Type": "application/json",
             ...(token ? { Authorization: `Bearer ${token}` } : {}),
@@ -100,7 +101,7 @@ export const setQuantity = async (product, quantity) => {
     const safeQuantity = Math.max(1, quantity);
     const productId = product.id ?? product.productId;
     const cartItem = cartCache.find((entry) => entry.productId === productId);
-    
+
     if (!cartItem || !cartItem.id) {
         console.error("Cannot update: Cart item ID not found in cache. Item might not be in DB yet.");
         return;
@@ -129,7 +130,7 @@ export const changeQuantity = async (product, delta) => {
 // Matches C# Controller: [HttpDelete("items/{cartItemId}")]
 export const removeFromCart = async (productId) => {
     const cartItem = cartCache.find((entry) => entry.productId === productId);
-    
+
     if (!cartItem || !cartItem.id) {
         console.error("Cannot remove: Cart item ID not found in cache.");
         return;

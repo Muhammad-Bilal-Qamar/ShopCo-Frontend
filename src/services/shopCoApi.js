@@ -8,10 +8,11 @@ import {
     saveAuthState,
     updateStoredUser,
 } from "../utils/auth.js";
+import { API_BASE_URL } from "../utils/apiConfig.js";
 
 const client = () =>
     axios.create({
-        baseURL: "/api",
+        baseURL: API_BASE_URL,
         headers: {
             "Content-Type": "application/json",
             ...(readStoredToken() ? { Authorization: `Bearer ${readStoredToken()}` } : {}),
@@ -71,7 +72,7 @@ export const createProduct = async (payload) => {
     // [FromForm] ProductCreateUpdateDto dto, [FromForm] IFormFile? image
     const formData = buildProductFormData(payload);
 
-    const response = await axios.post("/api/admin/products", formData, {
+    const response = await axios.post(`${API_BASE_URL}/admin/products`, formData, {
         headers: {
             ...(readStoredToken() ? { Authorization: `Bearer ${readStoredToken()}` } : {}),
         },
@@ -87,7 +88,7 @@ export const updateProduct = async (productId, payload) => {
     // Image is optional on update - only sent if the admin picked a new file.
     const formData = buildProductFormData(payload);
 
-    const response = await axios.put(`/api/admin/products/${productId}`, formData, {
+    const response = await axios.put(`${API_BASE_URL}/admin/products/${productId}`, formData, {
         headers: {
             ...(readStoredToken() ? { Authorization: `Bearer ${readStoredToken()}` } : {}),
         },
@@ -108,7 +109,7 @@ export const uploadProfilePicture = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await axios.post("/api/users/profile-picture", formData, {
+    const response = await axios.post(`${API_BASE_URL}/users/profile-picture`, formData, {
         headers: {
             ...(readStoredToken() ? { Authorization: `Bearer ${readStoredToken()}` } : {}),
         },

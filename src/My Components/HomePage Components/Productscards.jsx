@@ -86,6 +86,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../../utils/apiConfig.js";
 import { getProductImageUrl } from "../../utils/media.js";
 
 export default function UserCards() {
@@ -93,7 +94,7 @@ export default function UserCards() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/products")
+    fetch(`${API_BASE_URL}/products`)
       .then((response) => {
         return response.json();
       })

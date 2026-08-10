@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../utils/apiConfig.js";
 import { saveAuthState } from "../../utils/auth.js";
 
 const Signup = () => {
@@ -32,7 +33,7 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const response = await fetch("/api/users/register", {
+      const response = await fetch(`${API_BASE_URL}/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

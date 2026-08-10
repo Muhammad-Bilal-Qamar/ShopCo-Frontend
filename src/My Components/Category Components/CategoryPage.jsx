@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import PromoBanner from "../HomePage Components/Promobar.jsx";
 import Navbar from "../HomePage Components/Navbar.jsx";
 import Footer from "../HomePage Components/Footer.jsx";
+import { API_BASE_URL } from "../../utils/apiConfig.js";
 import { getProductImageUrl } from "../../utils/media.js";
 
 // Dress styles map 1:1 to the `category` field stored on each product
@@ -532,7 +533,7 @@ export default function CategoryPage() {
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetch("/api/products")
+    fetch(`${API_BASE_URL}/products`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load products");
         return res.json();

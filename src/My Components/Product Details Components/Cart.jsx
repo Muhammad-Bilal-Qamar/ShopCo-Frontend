@@ -3,6 +3,8 @@ import PromoBanner from "../HomePage Components/Promobar.jsx";
 import Navbar from "../HomePage Components/Navbar.jsx";
 import Footer from "../HomePage Components/Footer.jsx";
 import { useState, useEffect } from "react";
+import DeleteIcon from "../../assets/Delete.svg";
+import { API_BASE_URL } from "../../utils/apiConfig.js";
 import { getCart, hydrateCart, removeFromCart } from "./cartStore.js";
 import { getProductImageUrl } from "../../utils/media.js";
 
@@ -41,7 +43,9 @@ const Cart = () => {
       }
 
       try {
-        const response = await fetch(`/api/carts/${userId}`, { headers });
+        const response = await fetch(`${API_BASE_URL}/carts/${userId}`, {
+          headers,
+        });
         const text = await response.text();
         let data = null;
 
@@ -108,7 +112,7 @@ const Cart = () => {
     };
 
     syncCartFromBackend().finally(() => {
-      fetch("/api/products", { headers })
+      fetch(`${API_BASE_URL}/products`, { headers })
         .then(async (response) => {
           const text = await response.text();
           let data = null;
@@ -240,7 +244,7 @@ const Cart = () => {
                           className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-xl border border-gray-200 bg-white text-red-500 transition hover:bg-red-50 sm:right-4 sm:top-4 sm:h-10 sm:w-10 sm:rounded-2xl"
                         >
                           <img
-                            src="/src/assets/Delete.svg"
+                            src={DeleteIcon}
                             alt="Delete"
                             className="h-4 w-4 sm:h-5 sm:w-5"
                           />

@@ -27,6 +27,7 @@
 // export default PromoBanner;
 
 import { useEffect, useState } from "react";
+import CrossIcon from "../../assets/Cross.svg";
 
 function PromoBanner() {
   const [isVisible, setIsVisible] = useState(() => {
@@ -67,11 +68,7 @@ function PromoBanner() {
         className="cursor-pointer p-1 hover:opacity-70 transition-opacity shrink-0"
         aria-label="Close banner"
       >
-        <img
-          src="src/assets/Cross.svg"
-          alt="Cancel"
-          className="w-3 h-3 sm:w-4 sm:h-4"
-        />
+        <img src={CrossIcon} alt="Cancel" className="w-3 h-3 sm:w-4 sm:h-4" />
       </button>
     </div>
   );

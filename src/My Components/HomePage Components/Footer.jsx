@@ -232,6 +232,16 @@
 // export default Footer;
 
 import React from "react";
+import MailIcon from "../../assets/Mail.svg";
+import XIcon from "../../assets/x.svg";
+import FacebookIcon from "../../assets/fb.svg";
+import InstagramIcon from "../../assets/insta.svg";
+import GitHubIcon from "../../assets/git.svg";
+import VisaIcon from "../../assets/Visa.svg";
+import MasterCardIcon from "../../assets/MasterCard.svg";
+import PayPalIcon from "../../assets/PayPal.svg";
+import ApplePayIcon from "../../assets/ApplePay.svg";
+import GooglePayIcon from "../../assets/GooglePay.svg";
 
 const Footer = () => {
   return (
@@ -246,7 +256,7 @@ const Footer = () => {
             {/* Input Wrapper */}
             <div className="relative flex items-center w-full">
               <img
-                src="src/assets/Mail.svg"
+                src={MailIcon}
                 alt="mail"
                 className="absolute left-4 h-5 w-5 object-contain pointer-events-none"
               />
@@ -277,14 +287,14 @@ const Footer = () => {
                 href="#"
                 className="flex h-7 w-7 items-center justify-center rounded-full border border-gray-300 bg-white hover:bg-black hover:text-white transition"
               >
-                <img src="src/assets/x.svg" alt="X" className="h-3 w-3" />
+                <img src={XIcon} alt="X" className="h-3 w-3" />
               </a>
               <a
                 href="#"
                 className="flex h-7 w-7 items-center justify-center rounded-full bg-black text-white hover:opacity-80 transition"
               >
                 <img
-                  src="src/assets/fb.svg"
+                  src={FacebookIcon}
                   alt="Facebook"
                   className="h-3 w-3 invert"
                 />
@@ -293,21 +303,13 @@ const Footer = () => {
                 href="#"
                 className="flex h-7 w-7 items-center justify-center rounded-full border border-gray-300 bg-white hover:bg-black hover:text-white transition"
               >
-                <img
-                  src="src/assets/insta.svg"
-                  alt="Instagram"
-                  className="h-3 w-3"
-                />
+                <img src={InstagramIcon} alt="Instagram" className="h-3 w-3" />
               </a>
               <a
                 href="#"
                 className="flex h-7 w-7 items-center justify-center rounded-full border border-gray-300 bg-white hover:bg-black hover:text-white transition"
               >
-                <img
-                  src="src/assets/git.svg"
-                  alt="Github"
-                  className="h-3 w-3"
-                />
+                <img src={GitHubIcon} alt="Github" className="h-3 w-3" />
               </a>
             </div>
           </div>
@@ -431,27 +433,27 @@ const Footer = () => {
           <p>Shop.co © 2000-2023, All Rights Reserved</p>
           <div className="flex flex-wrap items-center justify-center gap-2 px-2 py-1 rounded">
             <img
-              src="src/assets/Visa.svg"
+              src={VisaIcon}
               alt="Visa"
               className="w-12 h-7 object-contain"
             />
             <img
-              src="src/assets/MasterCard.svg"
+              src={MasterCardIcon}
               alt="MasterCard"
               className="w-12 h-7 object-contain"
             />
             <img
-              src="src/assets/PayPal.svg"
+              src={PayPalIcon}
               alt="PayPal"
               className="w-12 h-7 object-contain"
             />
             <img
-              src="src/assets/ApplePay.svg"
+              src={ApplePayIcon}
               alt="Apple Pay"
               className="w-12 h-7 object-contain"
             />
             <img
-              src="src/assets/GooglePay.svg"
+              src={GooglePayIcon}
               alt="Google Pay"
               className="w-12 h-7 object-contain"
             />

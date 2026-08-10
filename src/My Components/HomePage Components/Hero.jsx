@@ -84,6 +84,13 @@
 // export default Hero;
 
 import React from "react";
+import RectangleImage from "../../assets/Rectangle 2.svg";
+import StarIcon from "../../assets/Star.svg";
+import VersaceLogo from "../../assets/Versace.svg";
+import ZaraLogo from "../../assets/zara-logo-1 1.svg";
+import GucciLogo from "../../assets/gucci-logo-1 1.svg";
+import PradaLogo from "../../assets/prada-logo-1 1.svg";
+import CalvinLogo from "../../assets/Calvin.svg";
 
 const Hero = () => {
   return (
@@ -146,19 +153,19 @@ const Hero = () => {
       {/* Hero Image Container */}
       <div className="w-full relative z-10 px-4 md:px-0">
         <img
-          src="./src/assets/Rectangle 2.svg"
+          src={RectangleImage}
           alt="Models with stars"
           className="w-full h-auto min-h-[300px] md:min-h-[500px] lg:min-h-[600px] object-cover object-right md:object-center rounded-2xl md:rounded-none"
         />
 
         {/* Decorative Stars */}
         <img
-          src="src\assets\Star.svg"
+          src={StarIcon}
           alt="decorative star"
           className="absolute left-[8%] top-[25%] md:left-[55%] md:top-[40%] w-8 h-8 md:w-11 md:h-11 z-30"
         />
         <img
-          src="src\assets\Star.svg"
+          src={StarIcon}
           alt="decorative star"
           className="absolute right-[10%] top-[10%] md:top-[10%] md:right-[5%] w-16 h-16 md:w-20 md:h-20 lg:w-26 lg:h-26 z-30"
         />
@@ -169,17 +176,17 @@ const Hero = () => {
         {/* Row 1 (Mobile) */}
         <div className="flex items-center justify-center gap-x-8 md:gap-x-20">
           <img
-            src="src\assets\Versace.svg"
+            src={VersaceLogo}
             alt="Versace"
             className="h-5 md:h-6 object-contain"
           />
           <img
-            src="src\assets\zara-logo-1 1.svg"
+            src={ZaraLogo}
             alt="Zara"
             className="h-5 md:h-6 object-contain"
           />
           <img
-            src="src\assets\gucci-logo-1 1.svg"
+            src={GucciLogo}
             alt="Gucci"
             className="h-5 md:h-6 object-contain"
           />
@@ -187,12 +194,12 @@ const Hero = () => {
         {/* Row 2 (Mobile) */}
         <div className="flex items-center justify-center gap-x-8 md:gap-x-20">
           <img
-            src="src\assets\prada-logo-1 1.svg"
+            src={PradaLogo}
             alt="Prada"
             className="h-5 md:h-6 object-contain"
           />
           <img
-            src="src\assets\Calvin.svg"
+            src={CalvinLogo}
             alt="Calvin Klein"
             className="h-5 md:h-6 object-contain"
           />

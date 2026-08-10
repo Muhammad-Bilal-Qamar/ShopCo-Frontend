@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../../utils/apiConfig.js";
 
 export default function ForgotPassword() {
   const [step, setStep] = useState("EMAIL"); // 'EMAIL' | 'SHOW_SUCCESS' | 'OTP' | 'RESET' | 'COMPLETE'
@@ -20,7 +21,7 @@ export default function ForgotPassword() {
     setStatus({ loading: true, error: "", successMessage: "" });
 
     try {
-      await axios.post("/api/Users/forgot-password", {
+      await axios.post(`${API_BASE_URL}/Users/forgot-password`, {
         ResetEmail: email,
       });
 
@@ -78,7 +79,7 @@ export default function ForgotPassword() {
     setStatus({ loading: true, error: "", successMessage: "" });
 
     try {
-      await axios.post("/api/Users/verify-otp", {
+      await axios.post(`${API_BASE_URL}/Users/verify-otp`, {
         Email: email,
         OTPCode: otpCode,
       });
@@ -103,7 +104,7 @@ export default function ForgotPassword() {
     setStatus({ loading: true, error: "", successMessage: "" });
 
     try {
-      await axios.post("/api/Users/reset-password", {
+      await axios.post(`${API_BASE_URL}/Users/reset-password`, {
         Email: email,
         NewPassword: newPassword,
         ConfirmNewPassword: confirmPassword,
